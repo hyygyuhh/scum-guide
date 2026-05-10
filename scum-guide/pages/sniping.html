@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>狙击镜与归零 | SCUM 人渣生存攻略</title>
+    <meta name="description" content="SCUM游戏狙击镜使用技巧、归零调整方法、弹道计算详解">
+    <meta name="keywords" content="SCUM狙击,SCUM归零,SCUM瞄准镜,SCUM弹道,人渣游戏">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Rajdhani:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">S</div>
+                SCUM GUIDE
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html#beginner"><span>新手入门</span></a></li>
+                <li><a href="../index.html#map"><span>地图资源</span></a></li>
+                <li><a href="../index.html#survival"><span>生存技巧</span></a></li>
+                <li><a href="weapons.html"><span>武器详解</span></a></li>
+                <li><a href="#" class="lang-toggle" onclick="toggleLanguage()" title="Switch Language">EN/中</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1 class="section-title">狙击镜与归零</h1>
+        <div class="breadcrumb">
+            <a href="../index.html"><span>首页</span></a>
+            <span>/</span>
+            <span><span>狙击镜与归零</span></span>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="content-page">
+        <section class="content-section">
+            <h3>瞄准镜类型</h3>
+            <p>不同的瞄准镜适用于不同的作战距离，选择合适的瞄准镜是精准射击的第一步。</p>
+            <div class="weapon-grid">
+                <div class="weapon-card fade-in">
+                    <div class="weapon-header">
+                        <span class="weapon-name">红点瞄准镜</span>
+                        <span class="weapon-type">近战</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">放大倍率</span>
+                            <span class="weapon-stat-value">1x</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">适用距离</span>
+                            <span class="weapon-stat-value">近距离</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">特点</span>
+                            <span class="weapon-stat-value">快速瞄准</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-1">
+                    <div class="weapon-header">
+                        <span class="weapon-name">全息瞄准镜</span>
+                        <span class="weapon-type">近战</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">放大倍率</span>
+                            <span class="weapon-stat-value">1x</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">适用距离</span>
+                            <span class="weapon-stat-value">近距离</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">特点</span>
+                            <span class="weapon-stat-value">视野开阔</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-2">
+                    <div class="weapon-header">
+                        <span class="weapon-name">ACOG</span>
+                        <span class="weapon-type">中程</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">放大倍率</span>
+                            <span class="weapon-stat-value">4x</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">适用距离</span>
+                            <span class="weapon-stat-value">中距离</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">特点</span>
+                            <span class="weapon-stat-value">兼顾近远</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in">
+                    <div class="weapon-header">
+                        <span class="weapon-name">狙击镜 (PSO)</span>
+                        <span class="weapon-type">远程</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">放大倍率</span>
+                            <span class="weapon-stat-value">4x</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">适用距离</span>
+                            <span class="weapon-stat-value">中远距离</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">特点</span>
+                            <span class="weapon-stat-value">测距刻度</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-1">
+                    <div class="weapon-header">
+                        <span class="weapon-name">高倍狙击镜</span>
+                        <span class="weapon-type">远程</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">放大倍率</span>
+                            <span class="weapon-stat-value">8x-12x</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">适用距离</span>
+                            <span class="weapon-stat-value">远距离</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">特点</span>
+                            <span class="weapon-stat-value">精确射击</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h3>归零调整</h3>
+            <p>归零是狙击射击的核心技能，掌握归零才能在远距离精准命中目标。</p>
+            
+            <h4 style="color: var(--text-primary); margin: 1.5rem 0 1rem; font-family: 'Rajdhani', sans-serif; font-weight: 700;">什么是归零？</h4>
+            <ul>
+                <li>归零是调整瞄准镜使子弹在特定距离命中瞄准点</li>
+                <li>不同距离需要不同的归零设置</li>
+                <li>正确的归零可以大幅提高命中率</li>
+            </ul>
+
+            <h4 style="color: var(--text-primary); margin: 1.5rem 0 1rem; font-family: 'Rajdhani', sans-serif; font-weight: 700;">归零调整方法</h4>
+            <ul>
+                <li>开镜后按 <strong>Shift+滚轮</strong> 调整归零距离</li>
+                <li>归零范围：<strong>100m-1000m</strong></li>
+                <li>每次调整 <strong>100m</strong></li>
+                <li>向上滚动增加距离，向下滚动减少距离</li>
+            </ul>
+
+            <h4 style="color: var(--text-primary); margin: 1.5rem 0 1rem; font-family: 'Rajdhani', sans-serif; font-weight: 700;">归零选择建议</h4>
+            <div class="weapon-grid" style="margin-top: 1rem;">
+                <div class="weapon-card fade-in">
+                    <div class="weapon-header">
+                        <span class="weapon-name">100m以内</span>
+                        <span class="weapon-type">近距离</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">归零设置</span>
+                            <span class="weapon-stat-value">100m</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-1">
+                    <div class="weapon-header">
+                        <span class="weapon-name">200-300m</span>
+                        <span class="weapon-type">中近距离</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">归零设置</span>
+                            <span class="weapon-stat-value">200m</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-2">
+                    <div class="weapon-header">
+                        <span class="weapon-name">400-500m</span>
+                        <span class="weapon-type">中远距离</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">归零设置</span>
+                            <span class="weapon-stat-value">400m</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in">
+                    <div class="weapon-header">
+                        <span class="weapon-name">600m以上</span>
+                        <span class="weapon-type">远距离</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">归零设置</span>
+                            <span class="weapon-stat-value">600m+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h3>弹道计算</h3>
+            <p>了解弹道是成为优秀狙击手的关键。</p>
+            <ul>
+                <li><strong>子弹下坠：</strong>子弹在飞行过程中会因重力而下坠</li>
+                <li><strong>距离影响：</strong>距离越远，下坠越明显</li>
+                <li><strong>瞄准调整：</strong>需要根据距离调整瞄准点或归零设置</li>
+                <li><strong>归零优势：</strong>正确归零后可直接瞄准目标中心</li>
+            </ul>
+            <p style="margin-top: 1rem;"><strong>实战技巧：</strong>如果目标在归零距离之外，需要瞄准目标上方；如果在归零距离之内，需要瞄准目标下方。</p>
+        </section>
+
+        <section class="content-section">
+            <h3>狙击镜倍率调整</h3>
+            <p>部分高倍狙击镜支持变倍功能，可以根据情况灵活调整。</p>
+            <ul>
+                <li>开镜后按 <strong>滚轮</strong> 调整倍率（不按Shift）</li>
+                <li><strong>高倍率</strong>适合远距离精确射击，但视野较窄</li>
+                <li><strong>低倍率</strong>适合搜索目标，视野更开阔</li>
+                <li>根据实际情况灵活调整，不要一直使用最高倍率</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h3>测距技巧</h3>
+            <p>准确测距是精准射击的前提，以下是几种常用的测距方法。</p>
+            <ul>
+                <li><strong>狙击镜刻度测距：</strong>使用狙击镜中的刻度线，根据目标在刻度中的大小估算距离</li>
+                <li><strong>经验估算：</strong>通过大量练习积累经验，提高目测距离的准确性</li>
+                <li><strong>望远镜辅助：</strong>先用望远镜观察目标，估算距离后再用狙击镜瞄准</li>
+                <li><strong>地标参照：</strong>利用地图上的已知地标作为距离参照</li>
+            </ul>
+            <p style="margin-top: 1rem;"><strong>提示：</strong>PSO狙击镜有专门的测距刻度，可以辅助判断目标距离。</p>
+        </section>
+
+        <section class="content-section">
+            <h3>狙击实战技巧</h3>
+            <p>成为一名优秀的狙击手需要掌握以下技巧。</p>
+            <div class="recipe-list">
+                <div class="recipe-item">
+                    <div class="recipe-name">选择位置</div>
+                    <div class="recipe-ingredients">
+                        <span class="ingredient-tag">高地优势</span>
+                        <span class="ingredient-tag">良好掩体</span>
+                        <span class="ingredient-tag">撤退路线</span>
+                    </div>
+                    <div class="recipe-result">位置决定成败</div>
+                </div>
+                <div class="recipe-item">
+                    <div class="recipe-name">射击流程</div>
+                    <div class="recipe-ingredients">
+                        <span class="ingredient-tag">先测距</span>
+                        <span class="ingredient-tag">再归零</span>
+                        <span class="ingredient-tag">最后射击</span>
+                    </div>
+                    <div class="recipe-result">按步骤执行</div>
+                </div>
+                <div class="recipe-item">
+                    <div class="recipe-name">环境因素</div>
+                    <div class="recipe-ingredients">
+                        <span class="ingredient-tag">风向影响</span>
+                        <span class="ingredient-tag">移动目标预判</span>
+                        <span class="ingredient-tag">目标速度</span>
+                    </div>
+                    <div class="recipe-result">综合考虑</div>
+                </div>
+                <div class="recipe-item">
+                    <div class="recipe-name">射击姿态</div>
+                    <div class="recipe-ingredients">
+                        <span class="ingredient-tag">保持稳定</span>
+                        <span class="ingredient-tag">控制呼吸</span>
+                        <span class="ingredient-tag">卧姿最佳</span>
+                    </div>
+                    <div class="recipe-result">稳定是关键</div>
+                </div>
+                <div class="recipe-item">
+                    <div class="recipe-name">隐蔽原则</div>
+                    <div class="recipe-ingredients">
+                        <span class="ingredient-tag">打一枪换位置</span>
+                        <span class="ingredient-tag">避免被发现</span>
+                        <span class="ingredient-tag">注意伪装</span>
+                    </div>
+                    <div class="recipe-result">生存第一</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h3>常用狙击步枪归零建议</h3>
+            <p>不同狙击步枪有不同的弹道特性，以下是常用狙击步枪的归零建议。</p>
+            <div class="weapon-grid">
+                <div class="weapon-card fade-in">
+                    <div class="weapon-header">
+                        <span class="weapon-name">SVD</span>
+                        <span class="weapon-type">狙击步枪</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">推荐归零</span>
+                            <span class="weapon-stat-value">400m</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">有效射程</span>
+                            <span class="weapon-stat-value">800m</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">特点</span>
+                            <span class="weapon-stat-value">半自动、连射快</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-1">
+                    <div class="weapon-header">
+                        <span class="weapon-name">AWP</span>
+                        <span class="weapon-type">狙击步枪</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">推荐归零</span>
+                            <span class="weapon-stat-value">600m</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">有效射程</span>
+                            <span class="weapon-stat-value">1000m+</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">特点</span>
+                            <span class="weapon-stat-value">高伤害、精准</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-2">
+                    <div class="weapon-header">
+                        <span class="weapon-name">M24</span>
+                        <span class="weapon-type">狙击步枪</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">推荐归零</span>
+                            <span class="weapon-stat-value">500m</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">有效射程</span>
+                            <span class="weapon-stat-value">900m</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">特点</span>
+                            <span class="weapon-stat-value">均衡、可靠</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in">
+                    <div class="weapon-header">
+                        <span class="weapon-name">Mosin</span>
+                        <span class="weapon-type">狙击步枪</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">推荐归零</span>
+                            <span class="weapon-stat-value">300m</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">有效射程</span>
+                            <span class="weapon-stat-value">600m</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">特点</span>
+                            <span class="weapon-stat-value">老式、易获取</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">SCUM GUIDE</div>
+                <p class="footer-desc">最全面的SCUM生存攻略网站，帮助玩家在末日世界中生存下去。</p>
+            </div>
+            <div>
+                <h4 class="footer-title">快速导航</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html#beginner"><span>新手入门</span></a></li>
+                    <li><a href="../index.html#map"><span>地图资源</span></a></li>
+                    <li><a href="../index.html#survival"><span>生存技巧</span></a></li>
+                    <li><a href="weapons.html"><span>武器详解</span></a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">攻略分类</h4>
+                <ul class="footer-links">
+                    <li><a href="weapons.html">武器指南</a></li>
+                    <li><a href="armor.html">护甲装备</a></li>
+                    <li><a href="clothing.html">服装与装备</a></li>
+                    <li><a href="crafting.html">制作配方</a></li>
+                    <li><a href="cooking.html">烹饪食谱</a></li>
+                    <li><a href="enemies.html">敌人图鉴</a></li>
+                    <li><a href="vehicles.html">载具指南</a></li>
+                    <li><a href="basebuilding.html">基地建设</a></li>
+                    <li><a href="skills.html">技能系统</a></li>
+                    <li><a href="metabolism.html">新陈代谢</a></li>
+                    <li><a href="medicine.html">药品大全</a></li>
+                    <li><a href="diseases.html">疾病治疗</a></li>
+                    <li><a href="bunker.html">地下掩体</a></li>
+                    <li><a href="zones.html">危险区域</a></li>
+                    <li><a href="hotkeys.html">快捷键</a></li>
+                    <li><a href="banking.html">银行系统</a></li>
+                    <li><a href="fame.html">声望系统</a></li>
+                    <li><a href="tips.html">实用技巧</a></li>
+                    <li><a href="tools.html">工具大全</a></li>
+                    <li><a href="sniping.html">狙击镜与归零</a></li>
+                    <li><a href="server.html">服务器信息</a></li>
+                </ul>
+            </div>
+                        <div>
+                <h4 class="footer-title">相关资源</h4>
+                <ul class="footer-links">
+                    <li><a href="https://scum.game/" target="_blank" rel="noopener">官方Wiki</a></li>
+                    <li><a href="https://steamcommunity.com/app/513710/" target="_blank" rel="noopener">Steam社区</a></li>
+                    <li><a href="https://discord.gg/scumgame" target="_blank" rel="noopener">Discord</a></li>
+                    <li><a href="https://store.steampowered.com/news/?appids=513710" target="_blank" rel="noopener">更新日志</a></li>
+                </ul>
+            </div>
+<div>
+                <h4 class="footer-title">法律信息</h4>
+                <ul class="footer-links">
+                    <li><a href="privacy.html">隐私政策</a></li>
+                    <li><a href="disclaimer.html">免责声明</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 SCUM GUIDE. 本站为玩家自制攻略网站，与官方无关。SCUM™ 是 Gamepires 的注册商标。</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js?v=5"></script>
+</body>
+</html>

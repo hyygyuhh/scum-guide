@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基地建造详解 | SCUM 人渣生存攻略</title>
+    <meta name="description" content="SCUM游戏基地建造完整指南，包含领地旗、建筑模块、防御陷阱、修理维护等">
+    <meta name="keywords" content="SCUM基地建造,SCUM攻略,SCUM建筑,SCUM领地旗,人渣游戏">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Rajdhani:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">S</div>
+                SCUM GUIDE
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html#beginner"><span>新手入门</span></a></li>
+                <li><a href="../index.html#map"><span>地图资源</span></a></li>
+                <li><a href="../index.html#survival"><span>生存技巧</span></a></li>
+                <li><a href="weapons.html"><span>武器详解</span></a></li>
+                <li><a href="#" class="lang-toggle" onclick="toggleLanguage()" title="Switch Language">EN/中</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1 class="section-title">基地建造详解</h1>
+        <div class="breadcrumb">
+            <a href="../index.html"><span>首页</span></a>
+            <span>/</span>
+            <span><span>基地建造详解</span></span>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="content-page">
+        <!-- 板块1：建造基础 -->
+        <section class="content-section">
+            <h3>建造基础</h3>
+            <p>在SCUM中建造一个坚固的基地是长期生存的关键。了解建造系统的基础知识，才能打造出安全可靠的庇护所。</p>
+
+            <div class="weapon-grid">
+                <div class="weapon-card fade-in">
+                    <div class="weapon-header">
+                        <span class="weapon-name">领地旗（Puppet Flag）</span>
+                        <span class="weapon-type">核心</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">说明</span>
+                            <span class="weapon-stat-value">基地核心</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">材料</span>
+                            <span class="weapon-stat-value">布条x10 金属线x2 木头x5</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">功能</span>
+                            <span class="weapon-stat-value">定义领地范围</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">操作</span>
+                            <span class="weapon-stat-value">长按查看/修理</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-1">
+                    <div class="weapon-header">
+                        <span class="weapon-name">建造模式</span>
+                        <span class="weapon-type">操作</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">快捷键</span>
+                            <span class="weapon-stat-value">B键</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">功能</span>
+                            <span class="weapon-stat-value">打开建造菜单</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">前提</span>
+                            <span class="weapon-stat-value">需在领地范围内</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">提示</span>
+                            <span class="weapon-stat-value">所有建筑需领地旗</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-2">
+                    <div class="weapon-header">
+                        <span class="weapon-name">建筑材料</span>
+                        <span class="weapon-type">资源</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">基础</span>
+                            <span class="weapon-stat-value">木头</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">进阶</span>
+                            <span class="weapon-stat-value">石头</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">高级</span>
+                            <span class="weapon-stat-value">金属</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">特殊</span>
+                            <span class="weapon-stat-value">水泥</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 板块2：建筑模块 -->
+        <section class="content-section">
+            <h3>建筑模块</h3>
+            <p>以下是在领地范围内可以建造的各种建筑模块，从基础防御到功能性设施一应俱全。</p>
+            <div class="weapon-grid">
+                <div class="weapon-card fade-in">
+                    <div class="weapon-header">
+                        <span class="weapon-name">木墙</span>
+                        <span class="weapon-type">防御</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">所需材料</span>
+                            <span class="weapon-stat-value">木头x10</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">用途</span>
+                            <span class="weapon-stat-value">基础防御</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-1">
+                    <div class="weapon-header">
+                        <span class="weapon-name">石墙</span>
+                        <span class="weapon-type">防御</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">所需材料</span>
+                            <span class="weapon-stat-value">石头x15</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">用途</span>
+                            <span class="weapon-stat-value">更高耐久</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-2">
+                    <div class="weapon-header">
+                        <span class="weapon-name">金属墙</span>
+                        <span class="weapon-type">防御</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">所需材料</span>
+                            <span class="weapon-stat-value">金属板x5</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">用途</span>
+                            <span class="weapon-stat-value">最高耐久</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in">
+                    <div class="weapon-header">
+                        <span class="weapon-name">木门</span>
+                        <span class="weapon-type">出入口</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">所需材料</span>
+                            <span class="weapon-stat-value">木头x8</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">用途</span>
+                            <span class="weapon-stat-value">出入口</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-1">
+                    <div class="weapon-header">
+                        <span class="weapon-name">金属门</span>
+                        <span class="weapon-type">出入口</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">所需材料</span>
+                            <span class="weapon-stat-value">金属板x4</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">用途</span>
+                            <span class="weapon-stat-value">安全出入口</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-2">
+                    <div class="weapon-header">
+                        <span class="weapon-name">地板</span>
+                        <span class="weapon-type">结构</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">所需材料</span>
+                            <span class="weapon-stat-value">木头x6</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">用途</span>
+                            <span class="weapon-stat-value">多层建筑</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in">
+                    <div class="weapon-header">
+                        <span class="weapon-name">楼梯</span>
+                        <span class="weapon-type">结构</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">所需材料</span>
+                            <span class="weapon-stat-value">木头x8</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">用途</span>
+                            <span class="weapon-stat-value">连接楼层</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-1">
+                    <div class="weapon-header">
+                        <span class="weapon-name">屋顶</span>
+                        <span class="weapon-type">结构</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">所需材料</span>
+                            <span class="weapon-stat-value">木头x10</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">用途</span>
+                            <span class="weapon-stat-value">遮风挡雨</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-2">
+                    <div class="weapon-header">
+                        <span class="weapon-name">储物箱</span>
+                        <span class="weapon-type">存储</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">所需材料</span>
+                            <span class="weapon-stat-value">木头x6</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">用途</span>
+                            <span class="weapon-stat-value">存储物品</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in">
+                    <div class="weapon-header">
+                        <span class="weapon-name">武器架</span>
+                        <span class="weapon-type">展示</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">所需材料</span>
+                            <span class="weapon-stat-value">木头x8</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">用途</span>
+                            <span class="weapon-stat-value">展示武器</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-1">
+                    <div class="weapon-header">
+                        <span class="weapon-name">篝火</span>
+                        <span class="weapon-type">设施</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">所需材料</span>
+                            <span class="weapon-stat-value">石头x6</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">用途</span>
+                            <span class="weapon-stat-value">烹饪取暖</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-2">
+                    <div class="weapon-header">
+                        <span class="weapon-name">工作台</span>
+                        <span class="weapon-type">设施</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">所需材料</span>
+                            <span class="weapon-stat-value">木头x10</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">用途</span>
+                            <span class="weapon-stat-value">制作升级</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 板块3：防御策略 -->
+        <section class="content-section">
+            <h3>防御策略</h3>
+            <p>建造基地不仅是搭房子，更需要考虑防御体系。合理的防御策略能让你的基地在末日世界中屹立不倒。</p>
+
+            <div class="weapon-grid">
+                <div class="weapon-card fade-in">
+                    <div class="weapon-header">
+                        <span class="weapon-name">陷阱系统</span>
+                        <span class="weapon-type">防御</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">类型</span>
+                            <span class="weapon-stat-value">木刺陷阱</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">类型</span>
+                            <span class="weapon-stat-value">地雷</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">建议</span>
+                            <span class="weapon-stat-value">入口处布置</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">提示</span>
+                            <span class="weapon-stat-value">定期检查更换</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-1">
+                    <div class="weapon-header">
+                        <span class="weapon-name">建筑布局</span>
+                        <span class="weapon-type">设计</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">策略</span>
+                            <span class="weapon-stat-value">错层设计</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">策略</span>
+                            <span class="weapon-stat-value">射击孔</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">优势</span>
+                            <span class="weapon-stat-value">增加防御纵深</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">提示</span>
+                            <span class="weapon-stat-value">利于火力输出</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-2">
+                    <div class="weapon-header">
+                        <span class="weapon-name">安全储物</span>
+                        <span class="weapon-type">隐蔽</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">方法</span>
+                            <span class="weapon-stat-value">石头中造箱子</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">步骤1</span>
+                            <span class="weapon-stat-value">找到合适石头</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">步骤2</span>
+                            <span class="weapon-stat-value">旁边建储物箱</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">步骤3</span>
+                            <span class="weapon-stat-value">利用石头遮挡</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in">
+                    <div class="weapon-header">
+                        <span class="weapon-name">领地维护</span>
+                        <span class="weapon-type">管理</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">要点</span>
+                            <span class="weapon-stat-value">定期检查耐久</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">阈值</span>
+                            <span class="weapon-stat-value">低于75%需修理</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">操作</span>
+                            <span class="weapon-stat-value">长按领地旗查看</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">提示</span>
+                            <span class="weapon-stat-value">武器架需单独修</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 板块4：选址建议 -->
+        <section class="content-section">
+            <h3>选址建议</h3>
+            <p>基地选址直接关系到生存安全和资源获取效率。一个好的位置能让你的基地既隐蔽又便利。</p>
+            <div class="weapon-grid">
+                <div class="weapon-card fade-in">
+                    <div class="weapon-header">
+                        <span class="weapon-name">远离热点</span>
+                        <span class="weapon-type">安全</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">建议</span>
+                            <span class="weapon-stat-value">远离主要道路</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">建议</span>
+                            <span class="weapon-stat-value">远离热门搜刮点</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-1">
+                    <div class="weapon-header">
+                        <span class="weapon-name">水源保障</span>
+                        <span class="weapon-type">生存</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">要求</span>
+                            <span class="weapon-stat-value">附近有水源</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">优势</span>
+                            <span class="weapon-stat-value">方便饮水和灌溉</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-2">
+                    <div class="weapon-header">
+                        <span class="weapon-name">地形优势</span>
+                        <span class="weapon-type">战术</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">建议</span>
+                            <span class="weapon-stat-value">山坡、岩石后方</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">优势</span>
+                            <span class="weapon-stat-value">天然掩体屏障</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in">
+                    <div class="weapon-header">
+                        <span class="weapon-name">逃生路线</span>
+                        <span class="weapon-type">安全</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">要求</span>
+                            <span class="weapon-stat-value">至少两条逃生路线</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">目的</span>
+                            <span class="weapon-stat-value">被围困时撤离</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-1">
+                    <div class="weapon-header">
+                        <span class="weapon-name">避免开阔</span>
+                        <span class="weapon-type">隐蔽</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">建议</span>
+                            <span class="weapon-stat-value">避免开阔地带</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">原因</span>
+                            <span class="weapon-stat-value">容易被发现和狙击</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 板块5：进阶技巧 -->
+        <section class="content-section">
+            <h3>进阶技巧</h3>
+            <p>掌握这些进阶建造技巧，能让你的基地更安全、更难被攻破。</p>
+            <div class="weapon-grid">
+                <div class="weapon-card fade-in">
+                    <div class="weapon-header">
+                        <span class="weapon-name">多层建筑</span>
+                        <span class="weapon-type">技巧</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">效果</span>
+                            <span class="weapon-stat-value">增加搜刮难度</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">建议</span>
+                            <span class="weapon-stat-value">至少建两层以上</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-1">
+                    <div class="weapon-header">
+                        <span class="weapon-name">假入口</span>
+                        <span class="weapon-type">迷惑</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">效果</span>
+                            <span class="weapon-stat-value">迷惑入侵者</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">建议</span>
+                            <span class="weapon-stat-value">建造明显的假门</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-2">
+                    <div class="weapon-header">
+                        <span class="weapon-name">团队协作</span>
+                        <span class="weapon-type">效率</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">效果</span>
+                            <span class="weapon-stat-value">分工建造更高效</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">建议</span>
+                            <span class="weapon-stat-value">与队友配合建造</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in">
+                    <div class="weapon-header">
+                        <span class="weapon-name">定期维护</span>
+                        <span class="weapon-type">管理</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">原因</span>
+                            <span class="weapon-stat-value">建筑模块会掉耐久</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">建议</span>
+                            <span class="weapon-stat-value">定期维护很重要</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-card fade-in stagger-1">
+                    <div class="weapon-header">
+                        <span class="weapon-name">武器架维护</span>
+                        <span class="weapon-type">注意</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">要点</span>
+                            <span class="weapon-stat-value">墙上的武器架</span>
+                        </div>
+                        <div class="weapon-stat">
+                            <span class="weapon-stat-label">注意</span>
+                            <span class="weapon-stat-value">需要单独修理</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">SCUM GUIDE</div>
+                <p class="footer-desc">最全面的SCUM生存攻略网站，帮助玩家在末日世界中生存下去。</p>
+            </div>
+            <div>
+                <h4 class="footer-title">快速导航</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html#beginner"><span>新手入门</span></a></li>
+                    <li><a href="../index.html#map"><span>地图资源</span></a></li>
+                    <li><a href="../index.html#survival"><span>生存技巧</span></a></li>
+                    <li><a href="weapons.html"><span>武器详解</span></a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">攻略分类</h4>
+                <ul class="footer-links">
+                    <li><a href="weapons.html">武器指南</a></li>
+                    <li><a href="crafting.html">制作配方</a></li>
+                    <li><a href="enemies.html">敌人图鉴</a></li>
+                </ul>
+            </div>
+                        <div>
+                <h4 class="footer-title">相关资源</h4>
+                <ul class="footer-links">
+                    <li><a href="https://scum.game/" target="_blank" rel="noopener">官方Wiki</a></li>
+                    <li><a href="https://steamcommunity.com/app/513710/" target="_blank" rel="noopener">Steam社区</a></li>
+                    <li><a href="https://discord.gg/scumgame" target="_blank" rel="noopener">Discord</a></li>
+                    <li><a href="https://store.steampowered.com/news/?appids=513710" target="_blank" rel="noopener">更新日志</a></li>
+                </ul>
+            </div>
+<div>
+                <h4 class="footer-title">法律信息</h4>
+                <ul class="footer-links">
+                    <li><a href="privacy.html">隐私政策</a></li>
+                    <li><a href="disclaimer.html">免责声明</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SCUM GUIDE. 本站为玩家自制攻略网站，与官方无关。SCUM&trade; 是 Gamepires 的注册商标。</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js?v=5"></script>
+</body>
+</html>
