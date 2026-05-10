@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SCUM人渣生存攻略完整指南，包含武器详解、角色属性、基地建设、制作配方、载具系统、疾病治疗等21个详细攻略页面，助你成为最强幸存者">
+    <meta name="keywords" content="SCUM,人渣,攻略,生存指南,武器,基地建设,制作配方,载具,新手教程">
+    <title>SCUM 人渣生存攻略 | 完整生存指南</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Rajdhani:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Page-specific animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+
+        /* Force hide dropdown on desktop - override everything */
+        @media (min-width: 1025px) {
+            .dropdown-menu {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                opacity: 0 !important;
+                visibility: hidden !important;
+            }
+            .dropdown:hover .dropdown-menu,
+            .dropdown.active .dropdown-menu {
+                display: grid !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">S</div>
+                SCUM GUIDE
+            </a>
+            <ul class="nav-links">
+                <li><a href="#beginner" data-i18n="nav.beginner">新手入门</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-i18n="nav.guides">攻略分类</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header" data-i18n="dropdown.combat">战斗</li>
+                        <li><a href="pages/weapons.html" data-i18n="footer.cat.weapons">武器指南</a></li>
+                        <li><a href="pages/armor.html">护甲穿透</a></li>
+                        <li><a href="pages/sniping.html">狙击归零</a></li>
+                        <li><a href="pages/enemies.html">敌人图鉴</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li class="dropdown-header" data-i18n="dropdown.survival">生存</li>
+                        <li><a href="pages/skills.html">角色属性</a></li>
+                        <li><a href="pages/metabolism.html">新陈代谢</a></li>
+                        <li><a href="pages/diseases.html">疾病治疗</a></li>
+                        <li><a href="pages/medicine.html">药品大全</a></li>
+                        <li><a href="pages/cooking.html">烹饪系统</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li class="dropdown-header" data-i18n="dropdown.building">建造</li>
+                        <li><a href="pages/basebuilding.html" data-i18n="footer.cat.base">基地建设</a></li>
+                        <li><a href="pages/crafting.html">制作配方</a></li>
+                        <li><a href="pages/tools.html">工具大全</a></li>
+                        <li><a href="pages/clothing.html">服装装备</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li class="dropdown-header" data-i18n="dropdown.world">世界</li>
+                        <li><a href="pages/vehicles.html">载具系统</a></li>
+                        <li><a href="pages/zones.html">地图区域</a></li>
+                        <li><a href="pages/bunker.html">地堡攻略</a></li>
+                        <li><a href="pages/fame.html">声望任务</a></li>
+                        <li><a href="pages/banking.html">银行交易</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li class="dropdown-header" data-i18n="dropdown.misc">其他</li>
+                        <li><a href="pages/hotkeys.html">快捷键</a></li>
+                        <li><a href="pages/tips.html">实用技巧</a></li>
+                        <li><a href="pages/server.html">服务器设置</a></li>
+                    </ul>
+                </li>
+                <li><a href="#map" data-i18n="nav.map">地图资源</a></li>
+                <li><a href="#survival" data-i18n="nav.survival">生存技巧</a></li>
+                <li><a href="#" class="lang-toggle" onclick="toggleLanguage()" title="Switch Language">EN/中</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-badge" data-i18n="hero.badge">完整生存指南</span>
+            <h1 class="hero-title">SCUM <span data-i18n="hero.title2">人渣</span></h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">在这片残酷的荒野中生存，你需要掌握一切技能。从零开始，成为最强大的幸存者。</p>
+            <div class="hero-cta">
+                <a href="#beginner" class="btn btn-primary" data-i18n="hero.cta1">开始学习</a>
+                <a href="#map" class="btn btn-secondary" data-i18n="hero.cta2">查看地图</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Beginner Guide Section -->
+    <section id="beginner" class="section">
+        <div class="section-header">
+            <span class="section-tag" data-i18n="section.beginner.tag">新手必读</span>
+            <h2 class="section-title" data-i18n="section.beginner.title">新手入门指南</h2>
+            <p class="section-desc" data-i18n="section.beginner.desc">掌握这些基础知识，让你在SCUM的世界中存活更久</p>
+        </div>
+
+        <div class="beginner-grid">
+            <div class="guide-card fade-in">
+                <span class="card-number">01</span>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <h3 class="card-title" data-i18n="card.01.title">基础操作</h3>
+                <div class="card-content">
+                    <p data-i18n="card.01.desc">熟悉游戏的基本操作是生存的第一步：</p>
+                    <ul>
+                        <li data-i18n="card.01.l1"><strong>左键点击</strong>：攻击/使用物品</li>
+                        <li data-i18n="card.01.l2"><strong>V键</strong>：切换攻击模式</li>
+                        <li data-i18n="card.01.l3"><strong>滚轮</strong>：调整移动速度</li>
+                        <li data-i18n="card.01.l4"><strong>Tab</strong>：打开背包</li>
+                        <li data-i18n="card.01.l5"><strong>M</strong>：打开地图</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="guide-card fade-in stagger-1">
+                <span class="card-number">02</span>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                    </svg>
+                </div>
+                <h3 class="card-title" data-i18n="card.02.title">制作背包</h3>
+                <div class="card-content">
+                    <p data-i18n="card.02.desc">初期最重要的任务——制作背包：</p>
+                    <ul>
+                        <li data-i18n="card.02.l1">撕碎衣服获得布条</li>
+                        <li data-i18n="card.02.l2">用树枝或布条制作绳子</li>
+                        <li data-i18n="card.02.l3">打开制作菜单搜索"backpack"</li>
+                        <li data-i18n="card.02.l4">制作简易背包获得10格空间</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="guide-card fade-in stagger-2">
+                <span class="card-number">03</span>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </div>
+                <h3 class="card-title" data-i18n="card.03.title">时间管理</h3>
+                <div class="card-content">
+                    <p data-i18n="card.03.desc">合理安排时间是生存关键：</p>
+                    <ul>
+                        <li data-i18n="card.03.l1">白天探索和搜集资源</li>
+                        <li data-i18n="card.03.l2">夜晚避免外出，僵尸更活跃</li>
+                        <li data-i18n="card.03.l3">注意体温和能量消耗</li>
+                        <li data-i18n="card.03.l4">规划好安全屋位置</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="guide-card fade-in stagger-3">
+                <span class="card-number">04</span>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </div>
+                <h3 class="card-title" data-i18n="card.04.title">避免危险</h3>
+                <div class="card-content">
+                    <p data-i18n="card.04.desc">识别并避开常见威胁：</p>
+                    <ul>
+                        <li data-i18n="card.04.l1">哨兵机器人：避开巡逻路线</li>
+                        <li data-i18n="card.04.l2">僵尸群：保持安静，绕行</li>
+                        <li data-i18n="card.04.l3">其他玩家：初期避免正面冲突</li>
+                        <li data-i18n="card.04.l4">野生动物：保持距离</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="guide-card fade-in stagger-4">
+                <span class="card-number">05</span>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                        <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                        <line x1="6" y1="1" x2="6" y2="4"/>
+                        <line x1="10" y1="1" x2="10" y2="4"/>
+                        <line x1="14" y1="1" x2="14" y2="4"/>
+                    </svg>
+                </div>
+                <h3 class="card-title" data-i18n="card.05.title">食物与水</h3>
+                <div class="card-content">
+                    <p data-i18n="card.05.desc">维持基本生存需求：</p>
+                    <ul>
+                        <li data-i18n="card.05.l1">寻找河流获取饮用水</li>
+                        <li data-i18n="card.05.l2">收集蘑菇和浆果（注意辨别）</li>
+                        <li data-i18n="card.05.l3">打猎获取肉类，需要烹饪</li>
+                        <li data-i18n="card.05.l4">避免食用腐烂食物</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="guide-card fade-in stagger-4">
+                <span class="card-number">06</span>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                        <path d="M17.657 18.657A8 8 0 0 1 6.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0 1 20 13a7.975 7.975 0 0 1-2.343 5.657z"/>
+                        <path d="M9.879 16.121A3 3 0 1 0 12.015 11L11 14H9c0 .768.293 1.536.879 2.121z"/>
+                    </svg>
+                </div>
+                <h3 class="card-title" data-i18n="card.06.title">生火技巧</h3>
+                <div class="card-content">
+                    <p data-i18n="card.06.desc">火源是生存的核心：</p>
+                    <ul>
+                        <li data-i18n="card.06.l1">收集树枝和树皮制作火钻</li>
+                        <li data-i18n="card.06.l2">用6根小树枝建造篝火</li>
+                        <li data-i18n="card.06.l3">靠近篝火时可以点燃</li>
+                        <li data-i18n="card.06.l4">火可以烹饪食物和取暖</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" class="map-section">
+        <div class="map-container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="section.map.tag">资源分布</span>
+                <h2 class="section-title" data-i18n="section.map.title">地图资源指南</h2>
+                <p class="section-desc" data-i18n="section.map.desc">了解各个区域的资源分布，规划你的搜刮路线</p>
+            </div>
+
+            <div class="map-grid">
+                <div class="location-card fade-in">
+                    <div class="location-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h4 class="location-name" data-i18n="loc.military">军事基地</h4>
+                    <p class="location-desc" data-i18n="loc.military.desc">高级武器、防弹装备</p>
+                    <div class="loot-quality">
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+
+                <div class="location-card fade-in stagger-1">
+                    <div class="location-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="3" y1="9" x2="21" y2="9"/>
+                            <line x1="9" y1="21" x2="9" y2="9"/>
+                        </svg>
+                    </div>
+                    <h4 class="location-name" data-i18n="loc.police">警察局</h4>
+                    <p class="location-desc" data-i18n="loc.police.desc">轻武器、警用装备</p>
+                    <div class="loot-quality">
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star empty" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+
+                <div class="location-card fade-in stagger-2">
+                    <div class="location-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <h4 class="location-name" data-i18n="loc.bunker">地下掩体</h4>
+                    <p class="location-desc" data-i18n="loc.bunker.desc">顶级装备、大量弹药</p>
+                    <div class="loot-quality">
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+
+                <div class="location-card fade-in stagger-3">
+                    <div class="location-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9 22 9 12 15 12 15 22"/>
+                        </svg>
+                    </div>
+                    <h4 class="location-name" data-i18n="loc.residential">居民区</h4>
+                    <p class="location-desc" data-i18n="loc.residential.desc">基础物资、食物衣物</p>
+                    <div class="loot-quality">
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star empty" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star empty" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+
+                <div class="location-card fade-in">
+                    <div class="location-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/>
+                        </svg>
+                    </div>
+                    <h4 class="location-name" data-i18n="loc.airport">机场</h4>
+                    <p class="location-desc" data-i18n="loc.airport.desc">军事装备、车辆</p>
+                    <div class="loot-quality">
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star empty" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+
+                <div class="location-card fade-in stagger-1">
+                    <div class="location-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                        </svg>
+                    </div>
+                    <h4 class="location-name" data-i18n="loc.hospital">医院</h4>
+                    <p class="location-desc" data-i18n="loc.hospital.desc">医疗用品、急救包</p>
+                    <div class="loot-quality">
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star empty" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+
+                <div class="location-card fade-in stagger-2">
+                    <div class="location-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                    </div>
+                    <h4 class="location-name" data-i18n="loc.trader">商人营地</h4>
+                    <p class="location-desc" data-i18n="loc.trader.desc">交易、任务、稀有物品</p>
+                    <div class="loot-quality">
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star empty" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+
+                <div class="location-card fade-in stagger-3">
+                    <div class="location-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+                            <line x1="4" y1="22" x2="4" y2="15"/>
+                        </svg>
+                    </div>
+                    <h4 class="location-name" data-i18n="loc.bootcamp">训练营</h4>
+                    <p class="location-desc" data-i18n="loc.bootcamp.desc">新手装备、基础武器</p>
+                    <div class="loot-quality">
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star empty" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="loot-star empty" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Survival Tips Section -->
+    <section id="survival" class="section">
+        <div class="section-header">
+            <span class="section-tag" data-i18n="section.survival.tag">生存秘籍</span>
+            <h2 class="section-title" data-i18n="section.survival.title">生存技巧详解</h2>
+            <p class="section-desc" data-i18n="section.survival.desc">掌握这些技巧，让你在末日世界中如鱼得水</p>
+        </div>
+
+        <div class="tips-container">
+            <div class="tips-list">
+                <div class="tip-item active" onclick="showTip(0)">
+                    <span class="tip-number">01</span>
+                    <div>
+                        <h4 class="tip-title" data-i18n="tip.attr">角色属性管理</h4>
+                        <p class="tip-preview" data-i18n="tip.attr.preview">了解并管理你的健康、能量和水分...</p>
+                    </div>
+                </div>
+                <div class="tip-item" onclick="showTip(1)">
+                    <span class="tip-number">02</span>
+                    <div>
+                        <h4 class="tip-title" data-i18n="tip.combat">战斗与潜行</h4>
+                        <p class="tip-preview" data-i18n="tip.combat.preview">何时战斗，何时躲避，这是生存的艺术...</p>
+                    </div>
+                </div>
+                <div class="tip-item" onclick="showTip(2)">
+                    <span class="tip-number">03</span>
+                    <div>
+                        <h4 class="tip-title" data-i18n="tip.base">基地建设</h4>
+                        <p class="tip-preview" data-i18n="tip.base.preview">建立安全的避风港是长期生存的关键...</p>
+                    </div>
+                </div>
+                <div class="tip-item" onclick="showTip(3)">
+                    <span class="tip-number">04</span>
+                    <div>
+                        <h4 class="tip-title" data-i18n="tip.gear">武器与装备</h4>
+                        <p class="tip-preview" data-i18n="tip.gear.preview">选择合适的武器和装备提升生存几率...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-detail">
+                <h3 class="tip-detail-title" id="tip-title">角色属性管理</h3>
+                <div class="tip-detail-content" id="tip-content">
+                    <p>在SCUM中，你的角色有多个需要管理的属性。了解这些属性如何工作对生存至关重要。</p>
+                    
+                    <h4>核心属性</h4>
+                    <ul>
+                        <li><strong>健康值</strong>：受到伤害会降低，降至0则死亡。可通过医疗用品恢复。</li>
+                        <li><strong>能量</strong>：影响行动能力和体力恢复速度。通过进食补充。</li>
+                        <li><strong>水分</strong>：脱水会导致健康下降。寻找水源保持水分充足。</li>
+                        <li><strong>体温</strong>：过低或过高都会影响健康。注意穿着和环境。</li>
+                    </ul>
+                    
+                    <h4>管理建议</h4>
+                    <ul>
+                        <li>定期检查属性面板，了解当前状态</li>
+                        <li>随身携带食物和水，随时补充</li>
+                        <li>根据天气调整穿着，避免中暑或冻伤</li>
+                        <li>受伤后及时处理，避免感染</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item fade-in">
+                <div class="stat-number">225</div>
+                <div class="stat-label" data-i18n="stat.map">平方公里地图</div>
+            </div>
+            <div class="stat-item fade-in stagger-1">
+                <div class="stat-number">64</div>
+                <div class="stat-label" data-i18n="stat.players">服务器玩家上限</div>
+            </div>
+            <div class="stat-item fade-in stagger-2">
+                <div class="stat-number">100+</div>
+                <div class="stat-label" data-i18n="stat.weapons">武器种类</div>
+            </div>
+            <div class="stat-item fade-in stagger-3">
+                <div class="stat-number">∞</div>
+                <div class="stat-label" data-i18n="stat.possibility">生存可能性</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Tips Section -->
+    <section id="tips" class="section">
+        <div class="section-header">
+            <span class="section-tag" data-i18n="section.tips.tag">进阶攻略</span>
+            <h2 class="section-title" data-i18n="section.tips.title">高级生存技巧</h2>
+            <p class="section-desc" data-i18n="section.tips.desc">从新手到高手的进阶之路</p>
+        </div>
+
+        <div class="beginner-grid">
+            <div class="guide-card fade-in">
+                <span class="card-number">A</span>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                    </svg>
+                </div>
+                <h3 class="card-title" data-i18n="adv.robot.title">机器人应对策略</h3>
+                <div class="card-content">
+                    <p data-i18n="adv.robot.desc">哨兵机器人是最危险的敌人：</p>
+                    <ul>
+                        <li data-i18n="adv.robot.l1">观察巡逻路线，规划安全通道</li>
+                        <li data-i18n="adv.robot.l2">蹲伏移动减少被发现概率</li>
+                        <li data-i18n="adv.robot.l3">利用建筑物作为掩护</li>
+                        <li data-i18n="adv.robot.l4">被锁定时快速寻找掩体</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="guide-card fade-in stagger-1">
+                <span class="card-number">B</span>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <h3 class="card-title" data-i18n="adv.team.title">多人协作</h3>
+                <div class="card-content">
+                    <p data-i18n="adv.team.desc">团队合作大大提升生存率：</p>
+                    <ul>
+                        <li data-i18n="adv.team.l1">分工合作：搜集、建造、警戒</li>
+                        <li data-i18n="adv.team.l2">共享资源和信息</li>
+                        <li data-i18n="adv.team.l3">互相照应战斗</li>
+                        <li data-i18n="adv.team.l4">建立团队基地</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="guide-card fade-in stagger-2">
+                <span class="card-number">C</span>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                        <line x1="1" y1="10" x2="23" y2="10"/>
+                    </svg>
+                </div>
+                <h3 class="card-title" data-i18n="adv.vehicle.title">车辆使用</h3>
+                <div class="card-content">
+                    <p data-i18n="adv.vehicle.desc">车辆是快速移动的关键：</p>
+                    <ul>
+                        <li data-i18n="adv.vehicle.l1">寻找火花塞和电池启动车辆</li>
+                        <li data-i18n="adv.vehicle.l2">注意燃料消耗</li>
+                        <li data-i18n="adv.vehicle.l3">车辆可存储大量物品</li>
+                        <li data-i18n="adv.vehicle.l4">小心驾驶，避免损坏</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="guide-card fade-in stagger-3">
+                <span class="card-number">D</span>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </div>
+                <h3 class="card-title" data-i18n="adv.pvp.title">PvP战术</h3>
+                <div class="card-content">
+                    <p data-i18n="adv.pvp.desc">与其他玩家的对抗技巧：</p>
+                    <ul>
+                        <li data-i18n="adv.pvp.l1">选择有利地形作战</li>
+                        <li data-i18n="adv.pvp.l2">保持移动，避免成为靶子</li>
+                        <li data-i18n="adv.pvp.l3">利用声音判断敌人位置</li>
+                        <li data-i18n="adv.pvp.l4">懂得何时撤退保存实力</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">SCUM GUIDE</div>
+                <p class="footer-desc" data-i18n="footer.desc">最全面的SCUM生存攻略网站，帮助玩家在末日世界中生存下去。持续更新最新攻略和技巧。</p>
+            </div>
+            <div>
+                <h4 class="footer-title" data-i18n="footer.quick">快速导航</h4>
+                <ul class="footer-links">
+                    <li><a href="#beginner" data-i18n="nav.beginner">新手入门</a></li>
+                    <li><a href="#map" data-i18n="nav.map">地图资源</a></li>
+                    <li><a href="#survival" data-i18n="nav.survival">生存技巧</a></li>
+                    <li><a href="#tips" data-i18n="nav.tips">进阶攻略</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title" data-i18n="footer.categories">攻略分类</h4>
+                <ul class="footer-links">
+                    <li><a href="pages/weapons.html" data-i18n="footer.cat.weapons">武器指南</a></li>
+                    <li><a href="pages/skills.html">角色属性</a></li>
+                    <li><a href="pages/basebuilding.html" data-i18n="footer.cat.base">基地建设</a></li>
+                    <li><a href="pages/crafting.html">制作配方</a></li>
+                    <li><a href="pages/cooking.html">烹饪系统</a></li>
+                    <li><a href="pages/hotkeys.html">快捷键</a></li>
+                    <li><a href="pages/enemies.html">敌人图鉴</a></li>
+                    <li><a href="pages/vehicles.html">载具系统</a></li>
+                    <li><a href="pages/diseases.html">疾病治疗</a></li>
+                    <li><a href="pages/armor.html">护甲穿透</a></li>
+                    <li><a href="pages/bunker.html">地堡攻略</a></li>
+                    <li><a href="pages/fame.html">声望任务</a></li>
+                    <li><a href="pages/banking.html">银行交易</a></li>
+                    <li><a href="pages/zones.html">地图区域</a></li>
+                    <li><a href="pages/tips.html">实用技巧</a></li>
+                    <li><a href="pages/metabolism.html">新陈代谢</a></li>
+                    <li><a href="pages/medicine.html">药品大全</a></li>
+                    <li><a href="pages/tools.html">工具大全</a></li>
+                    <li><a href="pages/sniping.html">狙击归零</a></li>
+                    <li><a href="pages/server.html">服务器设置</a></li>
+                    <li><a href="pages/clothing.html">服装装备</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title" data-i18n="footer.resources">相关资源</h4>
+                <ul class="footer-links">
+                    <li><a href="https://scum.game/" target="_blank" rel="noopener" data-i18n="footer.res.wiki">官方Wiki</a></li>
+                    <li><a href="https://steamcommunity.com/app/513710/" target="_blank" rel="noopener">Steam社区</a></li>
+                    <li><a href="https://discord.gg/scumgame" target="_blank" rel="noopener">Discord</a></li>
+                    <li><a href="https://store.steampowered.com/news/?appids=513710" target="_blank" rel="noopener" data-i18n="footer.res.changelog">更新日志</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 SCUM GUIDE. 本站为玩家自制攻略网站，与官方无关。SCUM™ 是 Gamepires 的注册商标。</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js?v=5"></script>
+    <script>
+        // Force apply translations after page load
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof applyTranslations === 'function') {
+                applyTranslations();
+            }
+        });
+        
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

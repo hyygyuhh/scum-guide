@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地图区域详解 | SCUM 人渣生存攻略</title>
+    <meta name="description" content="SCUM游戏地图分区详解，包含A1-D4各区域特点、推荐路线、建家位置">
+    <meta name="keywords" content="SCUM地图,SCUM攻略,SCUM区域,人渣游戏,SCUM建家">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Rajdhani:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">S</div>
+                SCUM GUIDE
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html#beginner"><span>新手入门</span></a></li>
+                <li><a href="../index.html#map"><span>地图资源</span></a></li>
+                <li><a href="../index.html#survival"><span>生存技巧</span></a></li>
+                <li><a href="weapons.html"><span>武器详解</span></a></li>
+                <li><a href="#" class="lang-toggle" onclick="toggleLanguage()" title="Switch Language">EN/中</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1 class="section-title">地图区域详解</h1>
+        <div class="breadcrumb">
+            <a href="../index.html"><span>首页</span></a>
+            <span>/</span>
+            <span><span>地图区域详解</span></span>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="content-page">
+        <section class="content-section">
+            <h3>地图概述</h3>
+            <p>SCUM地图分为A、B、C、D四个大区域，每个大区域再分为1-4小区（如A1、A2、A3、A4）。不同区域有不同的地形和资源分布，了解各区域特点对于生存至关重要。</p>
+        </section>
+
+        <section class="content-section">
+            <h3>A区（西北部-山地军事区）</h3>
+            <p><strong>地形特点</strong>：山地、森林、军事基地</p>
+            <p><strong>推荐路线</strong>：A1军事基地 → 北湖 → A2-A3村庄循环</p>
+            <p><strong>资源分布</strong>：</p>
+            <ul>
+                <li>A1：军事基地（高风险高回报）</li>
+                <li>A2-A3：村庄（食物、衣物、基础物资）</li>
+                <li>A4：山区（狩猎、木材）</li>
+            </ul>
+            <p><strong>建家推荐</strong>：</p>
+            <ul>
+                <li>A1北湖旁棚屋：水源近，森林隐蔽</li>
+                <li>A2村庄教堂：2层结构，视野好，易防守</li>
+            </ul>
+            <p><strong>注意事项</strong>：哨兵机器人多，新手慎入军事区</p>
+        </section>
+
+        <section class="content-section">
+            <h3>B区（东北部-平原农村）</h3>
+            <p><strong>地形特点</strong>：平原、农场、小镇</p>
+            <p><strong>推荐路线</strong>：B2农场 → B3村庄 → B1军事前哨</p>
+            <p><strong>资源分布</strong>：</p>
+            <ul>
+                <li>B2：农场（粮食、工具）</li>
+                <li>B3：村庄（综合物资）</li>
+                <li>B1：小型军事点（轻武器）</li>
+                <li>B4：海岸渔村（食物、渔具）</li>
+            </ul>
+            <p><strong>建家推荐</strong>：</p>
+            <ul>
+                <li>B2谷仓：空间大，存储充足</li>
+                <li>B3外围2层住宅：PvP防御优势</li>
+            </ul>
+            <p><strong>注意事项</strong>：平原地带视野开阔，容易被发现</p>
+        </section>
+
+        <section class="content-section">
+            <h3>C区（西南部-丛林工业区）</h3>
+            <p><strong>地形特点</strong>：丛林、工厂、山区</p>
+            <p><strong>推荐路线</strong>：C2工厂 → C1村庄 → C3森林狩猎</p>
+            <p><strong>资源分布</strong>：</p>
+            <ul>
+                <li>C2：工厂（金属、机械零件）</li>
+                <li>C1：村庄（基础物资）</li>
+                <li>C3：森林（狩猎资源丰富）</li>
+                <li>C4：海岸军事基地（高级装备）</li>
+            </ul>
+            <p><strong>建家推荐</strong>：</p>
+            <ul>
+                <li>C2废弃仓库：制作修理便利</li>
+                <li>C3山中小屋：完美隐蔽，猎物多</li>
+            </ul>
+            <p><strong>注意事项</strong>：丛林视野受限，容易遭遇伏击</p>
+        </section>
+
+        <section class="content-section">
+            <h3>D区（东南部-海岸港口）</h3>
+            <p><strong>地形特点</strong>：海岸、港口、城镇</p>
+            <p><strong>推荐路线</strong>：D2港口 → D1城镇 → D3军事仓库</p>
+            <p><strong>资源分布</strong>：</p>
+            <ul>
+                <li>D2：港口（金属、零件、渔具）</li>
+                <li>D1：城镇（综合物资）</li>
+                <li>D3：军事仓库（武器、装备）</li>
+                <li>D4：海岸废弃船只（海洋资源）</li>
+            </ul>
+            <p><strong>建家推荐</strong>：</p>
+            <ul>
+                <li>D2港口仓库：制作最佳地点</li>
+                <li>D4海岸悬崖小屋：海景，外围安全</li>
+            </ul>
+            <p><strong>注意事项</strong>：港口区域玩家活动频繁</p>
+        </section>
+
+        <section class="content-section">
+            <h3>区域选择建议</h3>
+            <ul>
+                <li><strong>新手推荐</strong>：B区（平原农村）- 资源稳定，危险较低</li>
+                <li><strong>PvP玩家</strong>：D区（海岸港口）- 玩家多，战斗频繁</li>
+                <li><strong>独狼玩家</strong>：C区（丛林工业区）- 隐蔽性好</li>
+                <li><strong>团队玩家</strong>：A区（山地军事区）- 高级装备多</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">SCUM GUIDE</div>
+                <p class="footer-desc">最全面的SCUM生存攻略网站，帮助玩家在末日世界中生存下去。</p>
+            </div>
+            <div>
+                <h4 class="footer-title">快速导航</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html#beginner"><span>新手入门</span></a></li>
+                    <li><a href="../index.html#map"><span>地图资源</span></a></li>
+                    <li><a href="../index.html#survival"><span>生存技巧</span></a></li>
+                    <li><a href="weapons.html"><span>武器详解</span></a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">攻略分类</h4>
+                <ul class="footer-links">
+                    <li><a href="weapons.html">武器指南</a></li>
+                    <li><a href="crafting.html">制作配方</a></li>
+                    <li><a href="enemies.html">敌人图鉴</a></li>
+                    <li><a href="zones.html">地图区域</a></li>
+                    <li><a href="tips.html">实用技巧</a></li>
+                </ul>
+            </div>
+                        <div>
+                <h4 class="footer-title">相关资源</h4>
+                <ul class="footer-links">
+                    <li><a href="https://scum.game/" target="_blank" rel="noopener">官方Wiki</a></li>
+                    <li><a href="https://steamcommunity.com/app/513710/" target="_blank" rel="noopener">Steam社区</a></li>
+                    <li><a href="https://discord.gg/scumgame" target="_blank" rel="noopener">Discord</a></li>
+                    <li><a href="https://store.steampowered.com/news/?appids=513710" target="_blank" rel="noopener">更新日志</a></li>
+                </ul>
+            </div>
+<div>
+                <h4 class="footer-title">法律信息</h4>
+                <ul class="footer-links">
+                    <li><a href="privacy.html">隐私政策</a></li>
+                    <li><a href="disclaimer.html">免责声明</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 SCUM GUIDE. 本站为玩家自制攻略网站，与官方无关。SCUM™ 是 Gamepires 的注册商标。</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js?v=5"></script>
+</body>
+</html>

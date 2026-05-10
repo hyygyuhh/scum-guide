@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地堡攻略 | SCUM 人渣生存攻略</title>
+    <meta name="description" content="SCUM游戏地堡（Bunker）完整攻略，包含进入方法、战利品分布、BCU终端使用、安全撤离">
+    <meta name="keywords" content="SCUM地堡,SCUM攻略,地堡战利品,BCU终端,人渣游戏">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Rajdhani:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">S</div>
+                SCUM GUIDE
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html#beginner"><span>新手入门</span></a></li>
+                <li><a href="../index.html#map"><span>地图资源</span></a></li>
+                <li><a href="../index.html#survival"><span>生存技巧</span></a></li>
+                <li><a href="weapons.html"><span>武器详解</span></a></li>
+                <li><a href="#" class="lang-toggle" onclick="toggleLanguage()" title="Switch Language">EN/中</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1 class="section-title">地堡攻略</h1>
+        <div class="breadcrumb">
+            <a href="../index.html"><span>首页</span></a>
+            <span>/</span>
+            <span><span>地堡攻略</span></span>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="content-page">
+        <section class="content-section">
+            <h3>地堡概述</h3>
+            <p>地堡是SCUM中最高风险的区域之一，也是获取顶级装备的最佳地点。</p>
+            <p>地堡内有大量武装NPC和哨兵机器人巡逻，危险系数极高。但相应的，地堡内的战利品极其丰富，包括顶级武器、装备和稀有物资。</p>
+            <p>进入地堡军械库需要BCU终端权限，这是获取最佳战利品的关键。</p>
+        </section>
+
+        <section class="content-section">
+            <h3>地堡位置</h3>
+            <p>地堡分布在地图的特定区域：</p>
+            <ul>
+                <li><strong>B0区</strong>：主要地堡入口，是最常被探索的地堡</li>
+                <li>地图上标记为"Abandoned Bunker"（废弃地堡）</li>
+                <li>通常位于偏远山区，周围环境复杂</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h3>进入准备</h3>
+            <p>进入地堡前必须做好充分准备，否则很难活着出来。</p>
+            
+            <div class="beginner-grid" style="margin-top: 1.5rem;">
+                <div class="guide-card fade-in">
+                    <div class="card-number">01</div>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h4 class="card-title">装备准备</h4>
+                    <div class="card-content">
+                        <ul>
+                            <li>高耐久防弹衣和头盔</li>
+                            <li>充足弹药（建议300发以上）</li>
+                            <li>医疗包（绷带、止血药、止痛药）</li>
+                            <li>食物和水</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="guide-card fade-in stagger-1">
+                    <div class="card-number">02</div>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h4 class="card-title">工具准备</h4>
+                    <div class="card-content">
+                        <ul>
+                            <li>BCU终端钥匙卡</li>
+                            <li>撬锁工具（可选）</li>
+                            <li>手电筒/夜视仪</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h3>地堡内部结构</h3>
+            <p>了解地堡结构有助于制定探索路线和逃生计划：</p>
+            <ul>
+                <li><strong>入口区域</strong>：通常有哨兵巡逻，需要小心潜入</li>
+                <li><strong>走廊</strong>：狭窄空间，容易遭遇NPC伏击</li>
+                <li><strong>军械库</strong>：需要BCU终端解锁，内有顶级战利品</li>
+                <li><strong>撤离点</strong>：记住逃生路线，情况不对立即撤退</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h3>战斗策略</h3>
+            <p>地堡内战斗需要谨慎和技巧：</p>
+            <ul>
+                <li><strong>利用掩体</strong> - 避免与敌人正面冲突，利用墙壁和障碍物掩护</li>
+                <li><strong>优先击杀武装NPC</strong> - 武装NPC掉落武器的概率为100%，是重要补给来源</li>
+                <li><strong>注意哨兵巡逻路线</strong> - 观察并记住哨兵的移动规律，寻找安全窗口</li>
+                <li><strong>小团队协作效率更高</strong> - 组队可以互相掩护，提高生存率</li>
+                <li><strong>受伤后及时撤退治疗</strong> - 不要硬撑，生命值过低时立即找安全地点恢复</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h3>BCU终端使用</h3>
+            <p>BCU终端是进入军械库的关键，使用方法如下：</p>
+            <ol>
+                <li>在地堡内找到BCU终端（通常位于军械库入口附近）</li>
+                <li>将BCU钥匙卡插入终端</li>
+                <li>等待系统解锁（有冷却时间，具体时长由服务器设置决定）</li>
+                <li>军械库门打开后，迅速进入搜刮战利品</li>
+            </ol>
+        </section>
+
+        <section class="content-section">
+            <h3>重要提示</h3>
+            <p>地堡探索需要格外谨慎，以下提示可能救你一命：</p>
+            <ul>
+                <li><strong>地堡内死亡损失极大</strong> - 携带的装备很可能全部丢失，谨慎行事</li>
+                <li><strong>建议组队前往</strong> - 单人探索风险过高，至少2-3人组队</li>
+                <li><strong>携带足够补给</strong> - 准备长期作战，不要指望在地堡内找到足够补给</li>
+                <li><strong>记住撤离路线</strong> - 进入前就规划好逃生路线，情况不对立即撤退</li>
+                <li><strong>军械库有冷却时间</strong> - 计划好访问时机，避免白跑一趟</li>
+                <li><strong>新版本武装NPC会战术配合</strong> - 新版AI更加智能和危险，不要掉以轻心</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">SCUM GUIDE</div>
+                <p class="footer-desc">最全面的SCUM生存攻略网站，帮助玩家在末日世界中生存下去。</p>
+            </div>
+            <div>
+                <h4 class="footer-title">快速导航</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html#beginner"><span>新手入门</span></a></li>
+                    <li><a href="../index.html#map"><span>地图资源</span></a></li>
+                    <li><a href="../index.html#survival"><span>生存技巧</span></a></li>
+                    <li><a href="weapons.html"><span>武器详解</span></a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">攻略分类</h4>
+                <ul class="footer-links">
+                    <li><a href="weapons.html">武器指南</a></li>
+                    <li><a href="armor.html">护甲与穿透</a></li>
+                    <li><a href="bunker.html">地堡攻略</a></li>
+                    <li><a href="crafting.html">制作配方</a></li>
+                    <li><a href="enemies.html">敌人图鉴</a></li>
+                </ul>
+            </div>
+                        <div>
+                <h4 class="footer-title">相关资源</h4>
+                <ul class="footer-links">
+                    <li><a href="https://scum.game/" target="_blank" rel="noopener">官方Wiki</a></li>
+                    <li><a href="https://steamcommunity.com/app/513710/" target="_blank" rel="noopener">Steam社区</a></li>
+                    <li><a href="https://discord.gg/scumgame" target="_blank" rel="noopener">Discord</a></li>
+                    <li><a href="https://store.steampowered.com/news/?appids=513710" target="_blank" rel="noopener">更新日志</a></li>
+                </ul>
+            </div>
+<div>
+                <h4 class="footer-title">法律信息</h4>
+                <ul class="footer-links">
+                    <li><a href="privacy.html">隐私政策</a></li>
+                    <li><a href="disclaimer.html">免责声明</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 SCUM GUIDE. 本站为玩家自制攻略网站，与官方无关。SCUM™ 是 Gamepires 的注册商标。</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js?v=5"></script>
+</body>
+</html>

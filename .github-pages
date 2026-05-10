@@ -1,0 +1,8 @@
+# GitHub Pages 部署配置
+# 无需特殊配置，GitHub Pages 会自动识别静态文件
+
+# 如果需要自定义域名，取消下面的注释并填写你的域名
+# custom_domain: yourdomain.com
+
+# 构建配置（对于纯静态网站，无需构建）
+# GitHub Pages 会直接提供根目录下的文件
