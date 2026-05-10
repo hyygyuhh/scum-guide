@@ -1,6 +1,0 @@
-# SCUM Guide Robots.txt
-User-agent: *
-Allow: /
-
-# 部署时请将下面的URL替换为实际域名
-Sitemap: https://Hyygyuhh.github.io/scum-guide/sitemap.xml
