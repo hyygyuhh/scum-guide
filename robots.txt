@@ -1,0 +1,10 @@
+# SCUM Guide Robots.txt
+User-agent: *
+Allow: /
+Allow: /pages/
+
+# Sitemap
+Sitemap: https://scumguide.site/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
