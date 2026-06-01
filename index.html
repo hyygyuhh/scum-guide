@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <script async custom-element="amp-auto-ads"
-        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SCUM人渣生存攻略完整指南，包含武器详解、角色属性、基地建设、制作配方、载具系统、疾病治疗等21个详细攻略页面，助你成为最强幸存者">
@@ -123,9 +120,6 @@
     </script>
 </head>
 <body>
-    <amp-auto-ads type="adsense"
-        data-ad-client="ca-pub-2501683206080400">
-</amp-auto-ads>
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
@@ -141,7 +135,9 @@
                         <li class="dropdown-header" data-i18n="dropdown.combat">战斗</li>
                         <li><a href="pages/weapons.html" data-i18n="footer.cat.weapons">武器指南</a></li>
                         <li><a href="pages/armor.html">护甲穿透</a></li>
+                    <li><a href="pages/ammo.html">贫铀穿甲弹</a></li>
                         <li><a href="pages/sniping.html">狙击归零</a></li>
+                        <li><a href="pages/ammo.html">贫铀穿甲弹</a></li>
                         <li><a href="pages/enemies.html">敌人图鉴</a></li>
                         <li class="dropdown-divider"></li>
                         <li class="dropdown-header" data-i18n="dropdown.survival">生存</li>
@@ -177,6 +173,19 @@
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
         </div>
     </nav>
+
+    <!-- 广告位 - 顶部 -->
+    <div class="ad-container">
+        <div class="ad-slot ad-slot-top">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2501683206080400"
+                 data-ad-slot="6497569705"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -666,6 +675,19 @@
     </section>
 
     <!-- Footer -->
+    <!-- 广告位 - 底部 -->
+    <div class="ad-container">
+        <div class="ad-slot ad-slot-bottom">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2501683206080400"
+                 data-ad-slot="6497569705"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-brand">
@@ -718,7 +740,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 SCUM GUIDE. 本站为玩家自制攻略网站，与官方无关。SCUM™ 是 Gamepires 的注册商标。</p>
+            <p>© 2024 SCUM GUIDE. 本站为玩家自制攻略网站，与官方无关。SCUM™ 是 Gamepires 的注册商标。</p>
         </div>
     </footer>
 
@@ -748,6 +770,20 @@
                 document.querySelector('.nav-links').classList.remove('active');
             });
         });
+    </script>
+    <!-- 百度自动推送 -->
+    <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
     </script>
 </body>
 </html>
