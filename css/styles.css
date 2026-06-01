@@ -686,6 +686,39 @@ body::before {
     letter-spacing: 1px;
 }
 
+/* Ad Container */
+.ad-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.ad-slot {
+    background: rgba(20,20,20,0.5);
+    border: 1px solid rgba(255,107,0,0.1);
+    border-radius: 4px;
+    padding: 1rem;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.ad-slot-top {
+    margin-top: 1rem;
+}
+
+.ad-slot-middle {
+    margin: 2rem auto;
+    max-width: 728px;
+}
+
+.ad-slot-bottom {
+    margin-bottom: 1rem;
+}
+
 /* Footer */
 .footer {
     background: var(--bg-secondary);
